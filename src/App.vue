@@ -3,7 +3,7 @@
     <!-- <HelloWorld msg="Welcome to Your Vue.js App1122" /> -->
     <!-- <Computed msg="傳到子元件" /> -->
     <!-- <Ex1 /> -->
-    <Fortest :list3=list3 />
+    <!-- <Fortest :list3=list3 /> -->
 
     <!-- <Filtertest @callDataToFather='showDataFromChild' />
     <div>{{childData}}</div>
@@ -15,14 +15,20 @@
     <!-- <Ontest /> -->
 
     <!-- 發送事件 -->
-    <Eventbus />
+    <!-- <Eventbus /> -->
     <!-- 建立bus, 監聽事件 -->
-    <Alert />
-    <hr>
+    <!-- <Alert /> -->
+
+    <!-- <hr>
     <h1>子傳父emit</h1>
     <Emittest @listenToChildEvent='showMsgFromChild' />
     <p>來自於子組件的數據為:{{fromChildData}}</p>
-    <hr>
+    <hr> -->
+
+    <!-- ---vuex---------------------------------------------------------------------- -->
+
+    <Conter />
+  
   </div>
 </template>
 
@@ -32,23 +38,28 @@
 // import Ex1 from "./components/Ex1"
 // import Filtertest from "./components/Filtertest"
 // import KeyMidifiers from "./components/keyMidifiers"
-import Fortest from "./components/Fortest";
+// import Fortest from "./components/Fortest";
 // import Iftest from "./components/Iftest"
 // import Modeltest from "./components/Modeltest"
 // import Ontest from "./components/Ontest"
-import Emittest from "./components/Emittest"
-import Eventbus from "./components/Eventbus"
-import Alert from "./components/Alert"
+// import Emittest from "./components/Emittest"
+// import Eventbus from "./components/Eventbus"
+// import Alert from "./components/Alert"
+
+import Conter from "./components/vuex/Conter"
 
 export default {
   name: "App",
   components: {
-    Eventbus,
-    //註冊元件
-    Alert,
-    //子傳父
-    Emittest,
-    Fortest
+    // Eventbus,
+    // 註冊元件
+    // Alert,
+    // 子傳父
+    // Emittest,
+
+    // ----------------
+
+    Conter
   },
   data() {
     return {
@@ -68,20 +79,18 @@ export default {
     showDataFromChild(data){
       this.childData = data
     },
-    // showAlert(msg){
-    //   alert(msg)
-    // }
+    increment(){
+      //store狀態變更
+      this.$store.commit('increment')
+      console.log(this.$store.state.count)
+    }
   },
   beforecreate() {
     console.log("Father Beforecreate");
   },
   created() {
     console.log("Father Created");
-
-    //bus註冊($on)一個方法
-    // this.$bus.$on('alert:message', (msg)=>{
-    //   this.showAlert(msg)
-    // })
+    this.increment()
   },
   beforeMount() {
     console.log("Father BeforeMount");
