@@ -47,6 +47,7 @@ export default {
         },
       ],
       list: [],
+      n:''
     };
   },
   computed: {

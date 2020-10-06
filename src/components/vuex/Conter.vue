@@ -1,8 +1,13 @@
 <template>
   <div>
       <h2>count:<span class="count">{{count}}</span></h2>
-      <button @click="actionIncrease">+1</button>
-      <button @click="actionDecrease">-1</button>
+
+      Set Number:
+      <input type="number" v-model="num">
+      <button @click="actionIncrease(num)">+ {{num}}</button>
+      <button @click="actionDecrease(num)">- {{num}}</button>
+
+      <button @click="actionCountReset">歸零</button>
   </div>
 </template>
 
@@ -14,6 +19,11 @@ import {mapGetters, mapActions} from "vuex"
 
 export default {
     name:"Conter",
+    data(){
+        return{
+            num:1
+        }
+    },
     computed:{
         ...mapGetters({
             count: "getCount",
@@ -21,12 +31,10 @@ export default {
     },
     methods: {
         ...mapActions([
-            "actionIncrease",
-            "actionDecrease",
+            "actionIncrease", //加數
+            "actionDecrease", //減數
+            "actionCountReset" //歸零
         ]),
-        callAction(){
-            this.actionIncrease;
-        }
     },
 }
 </script>

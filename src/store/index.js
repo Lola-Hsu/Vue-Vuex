@@ -1,5 +1,5 @@
-import vue from 'vue'
-import vuex from 'vuex'
+import Vue from 'vue'
+import Vuex from 'vuex'
 import {state, mutations} from './mutations'
 import * as getters from './getter'
 import * as actions from './action'

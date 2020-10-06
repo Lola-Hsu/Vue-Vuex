@@ -46,11 +46,11 @@ export default {
       get: function () {
         return this.firstName + "" + this.lastName;
       },
-      set: function () {
-        let name = newValue.split("");
-        this.firstName = name[0];
-        this.lastName = name[name.length - 1];
-      },
+      // set: function () {
+      //   let name = newValue.split("");
+      //   this.firstName = name[0];
+      //   this.lastName = name[name.length - 1];
+      // },
     },
     fullName2: function () {
       return this.firstName + "" + this.lastName;
@@ -60,12 +60,12 @@ export default {
     },
   },
   watch: {
-    firstName: function (val) {
-      this.fullNameCombined = this.firstName + " " + this.lastName;
-    },
-    lastName: function (val) {
-      this.fullNameCombined = this.firstName + " " + this.lastName;
-    },
+    // firstName: function (val) {
+    //   this.fullNameCombined = this.firstName + " " + this.lastName;
+    // },
+    // lastName: function (val) {
+    //   this.fullNameCombined = this.firstName + " " + this.lastName;
+    // },
   },
   methods: {
     reverseMessage: function () {
