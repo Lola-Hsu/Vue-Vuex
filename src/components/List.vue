@@ -26,10 +26,17 @@
 <script>
 export default {
   created() {
-      console.log(this.$refs)
     this.$bus.$on("alert:message", (msg) => {
       this.showAlert(msg);
     });
+  },
+  mounted(){
+      console.log(this.$refs.Ex1.$vnode.data.ref)
+  },
+  data(){
+      return{
+          title: this.$refs.Ex1.$vnode.data.ref
+      }
   },
   methods: {
     showAlert(msg) {
