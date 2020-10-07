@@ -13,8 +13,8 @@ export default new Router({
         },
         {
             name:'Computed',
-            path:'/helloworld',
-            component:()=> import('@/components/HelloWorld')
+            path:'/computed',
+            component:()=> import('@/components/Computed')
         },
         {
             name:'Ex1',
@@ -52,7 +52,7 @@ export default new Router({
             component:()=> import('@/components/Ontest')
         },
         {
-            name:'EventBus',
+            name:'Eventbus',
             path:'/eventbus',
             component:()=> import('@/components/Eventbus')
         },
@@ -66,6 +66,11 @@ export default new Router({
             path:'/emittest',
             component:()=> import('@/components/Emittest')
         },
+        {
+            name:'SlideShow',
+            path:'/slideshow',
+            component:()=> import('@/components/SlideShow')
+        }
     ]
 })
 

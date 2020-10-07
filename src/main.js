@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-//引用資料夾，預設會先找index.js
-import store from './store'
+//vuex
+import store from './store/store'
 
 // Vue-Router
-import router from './router'
+import router from './router/router'
 
 //vue-Mixin
 // Vue.mixin({

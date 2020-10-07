@@ -116,34 +116,34 @@ export default {
     },
   },
   beforecreate() {
-    console.log("Father Beforecreate");
+    // console.log("Father Beforecreate");
   },
   created() {
-    console.log("Father Created");
+    // console.log("Father Created");
   },
   beforeMount() {
-    console.log("Father BeforeMount");
+    // console.log("Father BeforeMount");
   },
   mounted() {
-    console.log("Father Mounted");
+    // console.log("Father Mounted");
   },
   beforeUpdate() {
-    console.log("Father BeforeUpdate");
+    // console.log("Father BeforeUpdate");
   },
   Updated() {
-    console.log("Father Updated");
+    // console.log("Father Updated");
   },
   activated() {
-    console.log("Father Activated");
+    // console.log("Father Activated");
   },
   deactivated() {
-    console.log("Father Deactivated");
+    // console.log("Father Deactivated");
   },
   beforeDestroy() {
-    console.log("Father BeforeDestroy");
+    // console.log("Father BeforeDestroy");
   },
   destroyed() {
-    console.log("Father Destroyed");
+    // console.log("Father Destroyed");
   },
 };
 </script>
@@ -165,6 +165,7 @@ export default {
 }
 
 .list__content {
+  padding-top: 40px;
   width: 80%;
   height: 100%;
   text-align: center;

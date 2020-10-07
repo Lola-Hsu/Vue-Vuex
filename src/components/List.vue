@@ -1,46 +1,71 @@
 <template>
-  <div>
-    <ul class="list__ul">
-      <li>
-        <router-link :to="{ name: 'HelloWorld' }" ref="HelloWorld">HelloWorld</router-link>
+  <div class="list__ul">
+    <ul class="ul__menu">
+      <li @click="getRouterName()">
+        <router-link :to="{ name: 'HelloWorld' }">HelloWorld</router-link>
       </li>
-      <li><router-link :to="{ name: 'Computed' }" ref="Computed">Computed</router-link></li>
-      <li><router-link :to="{ name: 'Ex1' }" ref="Ex1">Ex1</router-link></li>
-      <li><router-link :to="{ name: 'Fortest' }" ref="Fortest">Fortest</router-link></li>
-      <li>
-        <router-link :to="{ name: 'Filtertest' }" ref="Filtertest">Filtertest</router-link>
+      <li @click="getRouterName()">
+        <router-link :to="{ name: 'Computed' }">Computed</router-link>
       </li>
-      <li>
-        <router-link :to="{ name: 'KeyMidifiers' }" ref="KeyMidifiers">KeyMidifiers</router-link>
+      <li @click="getRouterName()">
+        <router-link :to="{ name: 'Ex1' }">Ex1</router-link>
       </li>
-      <li><router-link :to="{ name: 'Iftest' }" ref="Iftest">Iftest</router-link></li>
-      <li><router-link :to="{ name: 'Modeltest' }" ref="Modeltest">Modeltest</router-link></li>
-      <li><router-link :to="{ name: 'Ontest' }" ref="Ontest">Ontest</router-link></li>
-      <li><router-link :to="{ name: 'Eventbus' }" ref="Eventbus">Eventbus</router-link></li>
-      <li><router-link :to="{ name: 'Alert' }" ref="Alert">Alert</router-link></li>
-      <li><router-link :to="{ name: 'Emittest' }" ref="Emittest">Emittest</router-link></li>
+      <li @click="getRouterName()">
+        <router-link :to="{ name: 'Fortest' }">Fortest</router-link>
+      </li>
+      <li @click="getRouterName()">
+        <router-link :to="{ name: 'Filtertest' }">Filtertest</router-link>
+      </li>
+      <li @click="getRouterName()">
+        <router-link :to="{ name: 'KeyMidifiers' }">KeyMidifiers</router-link>
+      </li>
+      <li @click="getRouterName()">
+        <router-link :to="{ name: 'Iftest' }">Iftest</router-link>
+      </li>
+      <li @click="getRouterName()">
+        <router-link :to="{ name: 'Modeltest' }">Modeltest</router-link>
+      </li>
+      <li @click="getRouterName()">
+        <router-link :to="{ name: 'Ontest' }">Ontest</router-link>
+      </li>
+      <li @click="getRouterName()">
+        <router-link :to="{ name: 'Eventbus' }">Eventbus</router-link>
+      </li>
+      <li @click="getRouterName()">
+        <router-link :to="{ name: 'Alert' }">Alert</router-link>
+      </li>
+      <li @click="getRouterName()">
+        <router-link :to="{ name: 'Emittest' }">Emittest</router-link>
+      </li>
+      <li class="options">
+        <a href="#">Options</a>
+        <ul>
+          <li class="options1" @click="getRouterName()">
+            <router-link :to="{ name: 'SlideShow' }">SlideShow</router-link>
+          </li>
+          <li class="options1" @click="getRouterName()">
+            <router-link :to="{ name: 'SlideShow' }">SlideShow</router-link>
+          </li>
+        </ul>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  created() {
-    this.$bus.$on("alert:message", (msg) => {
-      this.showAlert(msg);
-    });
-  },
-  mounted(){
-      console.log(this.$refs.Ex1.$vnode.data.ref)
-  },
-  data(){
-      return{
-          title: this.$refs.Ex1.$vnode.data.ref
-      }
+  created() {},
+  data() {
+    return {
+      title: "",
+    };
   },
   methods: {
-    showAlert(msg) {
-      alert(msg);
+    getRouterName() {
+      // console.log(this.$route)
+      this.title = this.$route.name;
+      // console.log(this.title)
+      return this.$bus.$emit("title", this.title);
     },
   },
 };
@@ -48,24 +73,41 @@ export default {
 
 <style>
 .list__ul {
+  padding: 0;
+  margin: 0;
+  border-right: 1px solid black;
+}
+
+.ul__menu {
+  margin: 0;
+  padding: 0;
   width: 20%;
   height: 100%;
 }
 
-.list__ul li {
-  /* margin: 20px 0; */
+.ul__menu li {
+  margin: 0;
   width: 100%;
   padding: 20px 0;
   list-style: none;
 }
 
-.list__ul li a {
+.ul__menu li a {
   width: 100%;
   padding: 20px 40px;
   cursor: pointer;
+  text-decoration: none;
 }
 
-.list__ul li a:hover {
-  background: gray;
+.ul__menu li a:hover {
+  background: rgb(247, 242, 175);
+}
+
+.options1{
+  display: none;
+}
+
+.options:hover > ul{
+  display: block;
 }
 </style>
