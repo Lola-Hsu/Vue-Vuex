@@ -1,50 +1,18 @@
 <template>
   <div class="list__ul">
     <ul class="ul__menu">
-      <li @click="getRouterName()">
-        <router-link :to="{ name: 'HelloWorld' }">HelloWorld</router-link>
-      </li>
-      <li @click="getRouterName()">
-        <router-link :to="{ name: 'Computed' }">Computed</router-link>
-      </li>
-      <li @click="getRouterName()">
-        <router-link :to="{ name: 'Ex1' }">Ex1</router-link>
-      </li>
-      <li @click="getRouterName()">
-        <router-link :to="{ name: 'Fortest' }">Fortest</router-link>
-      </li>
-      <li @click="getRouterName()">
-        <router-link :to="{ name: 'Filtertest' }">Filtertest</router-link>
-      </li>
-      <li @click="getRouterName()">
-        <router-link :to="{ name: 'KeyMidifiers' }">KeyMidifiers</router-link>
-      </li>
-      <li @click="getRouterName()">
-        <router-link :to="{ name: 'Iftest' }">Iftest</router-link>
-      </li>
-      <li @click="getRouterName()">
-        <router-link :to="{ name: 'Modeltest' }">Modeltest</router-link>
-      </li>
-      <li @click="getRouterName()">
-        <router-link :to="{ name: 'Ontest' }">Ontest</router-link>
-      </li>
-      <li @click="getRouterName()">
-        <router-link :to="{ name: 'Eventbus' }">Eventbus</router-link>
-      </li>
-      <li @click="getRouterName()">
-        <router-link :to="{ name: 'Alert' }">Alert</router-link>
-      </li>
-      <li @click="getRouterName()">
-        <router-link :to="{ name: 'Emittest' }">Emittest</router-link>
+      <li v-for="(item,index) in name" :key="index">
+        <!-- {{item}} -->
+        <router-link :to="{ name:item }">{{item}}</router-link>
       </li>
       <li class="options">
-        <a href="#">Options</a>
-        <ul>
+        <div>Options</div>
+        <ul class="options__box">
           <li class="options1" @click="getRouterName()">
             <router-link :to="{ name: 'SlideShow' }">SlideShow</router-link>
           </li>
           <li class="options1" @click="getRouterName()">
-            <router-link :to="{ name: 'SlideShow' }">SlideShow</router-link>
+            <router-link :to="{ name: 'Flipcard' }">Flipcard</router-link>
           </li>
         </ul>
       </li>
@@ -58,6 +26,20 @@ export default {
   data() {
     return {
       title: "",
+      name:[
+        'HelloWorld',
+        'Computed',
+        'Ex1',
+        'Fortest',
+        'Filtertest',
+        'KeyMidifiers',
+        'Iftest',
+        'Modeltest',
+        'Ontest',
+        'Eventbus',
+        'Alert',
+        'Emittest',
+      ]
     };
   },
   methods: {
@@ -67,47 +49,61 @@ export default {
       // console.log(this.title)
       return this.$bus.$emit("title", this.title);
     },
+    // toRouterPage(){
+    //   router.push({path:'Ontest'})
+    // }
   },
 };
 </script>
 
 <style>
 .list__ul {
-  padding: 0;
-  margin: 0;
   border-right: 1px solid black;
 }
 
 .ul__menu {
-  margin: 0;
-  padding: 0;
-  width: 20%;
+  width: 120px;
   height: 100%;
+  text-align: center;
 }
 
 .ul__menu li {
-  margin: 0;
   width: 100%;
   padding: 20px 0;
   list-style: none;
+  cursor: pointer;
+  color: palevioletred;
 }
 
 .ul__menu li a {
   width: 100%;
-  padding: 20px 40px;
-  cursor: pointer;
+  height: 100%;
+  display: block;
+  /* border: 1px solid red; */
   text-decoration: none;
+  color: palevioletred;
 }
 
-.ul__menu li a:hover {
+.ul__menu li:hover {
   background: rgb(247, 242, 175);
 }
 
-.options1{
+.options1 {
   display: none;
 }
 
-.options:hover > ul{
+.options{
+  position: relative;
+}
+
+.options:hover .options1 {
   display: block;
+}
+
+.options__box{
+  width: 100%;
+  position: absolute;
+  right: -100%;
+  top: -50%;
 }
 </style>

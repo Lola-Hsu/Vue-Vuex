@@ -14,11 +14,25 @@ export default {
     };
   },
   mounted(){
-      this.$bus.$on("title", (msg) => {
-        // console.log(msg);
-        return this.title = msg
-      });
+      // this.$bus.$on("title", (msg) => {
+      //   return this.title = msg
+      // });
+
+      this.title = this.$route.name
+      console.log(this.$route.name)
   },
+  // beforeUpdate(){
+  //   this.title = this.$route.name
+  //   console.log(this.$route.name)
+  // },
+  // methods: {
+  //   toRouterPage(){
+  //     this.$router.push({path:'Ontest'})
+  //   }
+  // },
+  // watch:{
+  //   '$route': 'toRouterPage'
+  // }
 };
 </script>
 

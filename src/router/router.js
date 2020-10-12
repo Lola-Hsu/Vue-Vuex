@@ -70,6 +70,11 @@ export default new Router({
             name:'SlideShow',
             path:'/slideshow',
             component:()=> import('@/components/SlideShow')
+        },
+        {
+            name:'Flipcard',
+            path:'/flipcard',
+            component:()=> import('@/components/Flipcard')
         }
     ]
 })

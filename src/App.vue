@@ -166,8 +166,8 @@ export default {
 
 .list__content {
   padding-top: 40px;
-  width: 80%;
-  height: 100%;
+  width: 100%;
+  height: calc(100vh-120px);
   text-align: center;
 }
 </style>
