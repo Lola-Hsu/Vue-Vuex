@@ -71,36 +71,6 @@ export default {
   props: {
     msg: String,
   },
-  beforecreate() {
-    // console.log("Child Beforecreate");
-  },
-  created() {
-    // console.log("Child Created");
-  },
-  beforeMount() {
-    // console.log("Child BeforeMount");
-  },
-  mounted() {
-    // console.log("Child Mounted");
-  },
-  beforeUpdate() {
-    // console.log("Child BeforeUpdate");
-  },
-  updated() {
-    // console.log("Child Updated");
-  },
-  activated() {
-    // console.log("Child Activated");
-  },
-  deactivated() {
-    // console.log("Child Deactivated");
-  },
-  beforeDestroy() {
-    // console.log("Child BeforeDestroy");
-  },
-  destroyed() {
-    // console.log("Child Destroyed");
-  },
 };
 </script>
 

@@ -9,13 +9,15 @@ import store from './store/store'
 // Vue-Router
 import router from './router/router'
 
+//i18n
+import i18n from './I18n/I18n'
+
 //vue-Mixin
 // Vue.mixin({
 //   created:function(){
 //     console.log('im global mixin')
 //   }
 // })
-
 
 Vue.use(ElementUI);
 Vue.config.productionTip = false
@@ -26,5 +28,6 @@ Vue.prototype.$bus = new Vue();
 new Vue({
   render: h => h(App),
   store,
-  router
+  router,
+  i18n
 }).$mount('#app')

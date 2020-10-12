@@ -2,7 +2,7 @@ import * as types from './mutations_type'
 
 //state
 export const state = {
-    count : 0
+    count : 0,
 }
 
 //mutations
@@ -23,5 +23,5 @@ export const mutations = {
         //歸零
         state.count = 0;
         console.log('COUNT_RESET - state?', state.count);
-    }
+    },
 }

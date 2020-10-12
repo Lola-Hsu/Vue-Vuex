@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <div class="computed">
     <p>message : {{ message }}</p>
     <p>now: (computed) : {{ now }}</p>
     <p>getNow (method): {{ getNow() }}</p>
     <button @click="msg2">++</button>
     <p>{{ msg }}</p>
+    <div class="computed__box"></div>
   </div>
 </template>
 
@@ -38,4 +39,11 @@ export default {
 </script>
 
 <style>
+.computed__box{
+  width: 200px;
+  height: 200px;
+  background: red;
+  margin: 20px auto;
+  padding: 10px;
+}
 </style>

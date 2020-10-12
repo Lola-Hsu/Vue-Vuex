@@ -1,18 +1,23 @@
 <template>
   <div class="list__ul">
     <ul class="ul__menu">
-      <li v-for="(item,index) in name" :key="index">
-        <!-- {{item}} -->
-        <router-link :to="{ name:item }">{{item}}</router-link>
+      <li
+        v-for="(item, index) in name"
+        :key="index"
+        @click="$router.push({ path: item })"
+      >
+        {{ item }}
       </li>
       <li class="options">
         <div>Options</div>
         <ul class="options__box">
-          <li class="options1" @click="getRouterName()">
-            <router-link :to="{ name: 'SlideShow' }">SlideShow</router-link>
-          </li>
-          <li class="options1" @click="getRouterName()">
-            <router-link :to="{ name: 'Flipcard' }">Flipcard</router-link>
+          <li
+            class="options1"
+            v-for="(item, index) in dropdown"
+            :key="index"
+            @click="$router.push({ path: item })"
+          >
+            {{ item }}
           </li>
         </ul>
       </li>
@@ -22,48 +27,43 @@
 
 <script>
 export default {
-  created() {},
+  beforeRouteEnter(to, from, next) {
+    console.log("beforeRouteEnter");
+    next((vm) => {
+      vm.$router.replace(from.path);
+    });
+  },
   data() {
     return {
       title: "",
-      name:[
-        'HelloWorld',
-        'Computed',
-        'Ex1',
-        'Fortest',
-        'Filtertest',
-        'KeyMidifiers',
-        'Iftest',
-        'Modeltest',
-        'Ontest',
-        'Eventbus',
-        'Alert',
-        'Emittest',
-      ]
+      name: [
+        "HelloWorld",
+        "Computed",
+        "Ex1",
+        "Fortest",
+        "Filtertest",
+        "KeyMidifiers",
+        "Iftest",
+        "Modeltest",
+        "Ontest",
+        "Eventbus",
+        "Alert",
+        "Emittest",
+      ],
+      dropdown: ["SlideShow", "Flipcard"],
     };
-  },
-  methods: {
-    getRouterName() {
-      // console.log(this.$route)
-      this.title = this.$route.name;
-      // console.log(this.title)
-      return this.$bus.$emit("title", this.title);
-    },
-    // toRouterPage(){
-    //   router.push({path:'Ontest'})
-    // }
   },
 };
 </script>
 
 <style>
 .list__ul {
+  width: 120px;
+  height: calc(100vh - 120px);
   border-right: 1px solid black;
 }
 
 .ul__menu {
-  width: 120px;
-  height: 100%;
   text-align: center;
 }
 
@@ -92,7 +92,7 @@ export default {
   display: none;
 }
 
-.options{
+.options {
   position: relative;
 }
 
@@ -100,7 +100,7 @@ export default {
   display: block;
 }
 
-.options__box{
+.options__box {
   width: 100%;
   position: absolute;
   right: -100%;
