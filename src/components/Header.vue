@@ -13,26 +13,13 @@ export default {
       title:''
     };
   },
-  mounted(){
-      // this.$bus.$on("title", (msg) => {
-      //   return this.title = msg
-      // });
-
-      this.title = this.$route.name
-      console.log(this.$route.name)
-  },
-  // beforeUpdate(){
-  //   this.title = this.$route.name
-  //   console.log(this.$route.name)
-  // },
-  // methods: {
-  //   toRouterPage(){
-  //     this.$router.push({path:'Ontest'})
-  //   }
-  // },
-  // watch:{
-  //   '$route': 'toRouterPage'
-  // }
+  watch:{
+    //監聽router變化時
+    $route(to){
+      // console.log(to.path.slice(1))
+      this.title = to.path.slice(1)
+    }
+  }
 };
 </script>
 
