@@ -1,21 +1,21 @@
 <template>
-  <div class="list__ul">
-    <ul class="ul__menu">
+  <div class='list__ul'>
+    <ul class='ul__menu'>
       <li
-        v-for="(item, index) in name"
-        :key="index"
-        @click="$router.push({ path: item })"
+        v-for='(item, index) in name'
+        :key='index'
+        @click='$router.push({ path: item })'
       >
         {{ item }}
       </li>
-      <li class="options">
+      <li class='options'>
         <div>Options</div>
-        <ul class="options__box">
+        <ul class='options__box'>
           <li
-            class="options1"
-            v-for="(item, index) in dropdown"
-            :key="index"
-            @click="$router.push({ path: item })"
+            class='options1'
+            v-for='(item, index) in dropdown'
+            :key='index'
+            @click='$router.push({ path: item })'
           >
             {{ item }}
           </li>
@@ -27,27 +27,27 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
-      title: "",
+      title: '',
       name: [
-        "HelloWorld",
-        "Computed",
-        "Ex1",
-        "Fortest",
-        "Filtertest",
-        "KeyMidifiers",
-        "Iftest",
-        "Modeltest",
-        "Ontest",
-        "Eventbus",
-        "Alert",
-        "Emittest",
+        'HelloWorld',
+        'Computed',
+        'Ex1',
+        'Fortest',
+        'Filtertest',
+        'KeyMidifiers',
+        'Iftest',
+        'Modeltest',
+        'Ontest',
+        'Eventbus',
+        'Alert',
+        'Emittest'
       ],
-      dropdown: ["SlideShow", "Flipcard"],
-    };
-  },
-};
+      dropdown: ['SlideShow', 'Flipcard']
+    }
+  }
+}
 </script>
 
 <style>

@@ -1,29 +1,22 @@
 import Vue from 'vue'
 import App from './App.vue'
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 
-//vuex
+// vuex
 import store from './store/store'
 
 // Vue-Router
 import router from './router/router'
 
-//i18n
+// i18n
 import i18n from './I18n/I18n'
 
-//vue-Mixin
-// Vue.mixin({
-//   created:function(){
-//     console.log('im global mixin')
-//   }
-// })
-
-Vue.use(ElementUI);
+Vue.use(ElementUI)
 Vue.config.productionTip = false
 
-//event-bus
-Vue.prototype.$bus = new Vue();
+// event-bus
+Vue.prototype.$bus = new Vue()
 
 new Vue({
   render: h => h(App),

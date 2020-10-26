@@ -1,10 +1,10 @@
 <template>
-  <div class="block">
-    <span class="demonstration">Click 指示器触发</span>
-    <el-carousel trigger="click" height="150px">
-      <el-carousel-item v-for="(item,index) in img" :key="index">
-        <!-- <h3 class="small">{{ item }}</h3> -->
-          <div  :class="item">{{item}}</div>
+  <div class='block'>
+    <span class='demonstration'>Click 指示器触发</span>
+    <el-carousel trigger='click' height='150px'>
+      <el-carousel-item v-for='(item,index) in img' :key='index'>
+        <!-- <h3 class='small'>{{ item }}</h3> -->
+          <div  :class='item'>{{item}}</div>
       </el-carousel-item>
     </el-carousel>
   </div>
@@ -13,10 +13,10 @@
 <script>
 
 export default {
-  name: "SlideShow",
-  data(){
-    return{
-      img:[
+  name: 'SlideShow',
+  data () {
+    return {
+      img: [
         'box__img1',
         'box__img2',
         'box__img3',
@@ -24,7 +24,7 @@ export default {
       ]
     }
   }
-};
+}
 </script>
 
 <style>

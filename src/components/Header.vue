@@ -1,8 +1,8 @@
 <template>
-  <div class="header">
-    <h1 class="header__title">{{ title }}</h1>
-    <div class="switch">
-      <input class="switch__checkbox" type="checkbox" name="" id="checkbox" />
+  <div class='header'>
+    <h1 class='header__title'>{{ title }}</h1>
+    <div class='switch'>
+      <input class='switch__checkbox' type='checkbox' name='' id='checkbox' />
         <span></span>
     </div>
   </div>
@@ -10,28 +10,27 @@
 
 <script>
 export default {
-  name: "Header",
-  data() {
+  name: 'Header',
+  data () {
     return {
-      message: "111",
-      title: "",
-    };
+      message: '111',
+      title: ''
+    }
   },
   methods: {
-    getPath() {
+    getPath () {
       // console.log(this.$route.path)
-      this.title = this.$route.path.slice(1);
-    },
+      this.title = this.$route.path.slice(1)
+    }
   },
   watch: {
-    $route: "getPath",
-
-    //監聽router變化時
+    $route: 'getPath'
+    // 監聽router變化時
     // $route(to){
     //   this.title = to.path.slice(1)
     // }
-  },
-};
+  }
+}
 </script>
 
 <style>

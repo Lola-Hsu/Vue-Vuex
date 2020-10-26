@@ -8,15 +8,15 @@
 
 <script>
 export default {
-  name: "Filter11",
-  data() {
+  name: 'Filter11',
+  data () {
     return {
-      price: 9999999,
-    };
+      price: 9999999
+    }
   },
   Filters: {
     priceFormat: function (value) {
-      return "$" + value;
+      return '$' + value
     },
     commaFormat: function (value) {
       return value
@@ -26,17 +26,16 @@ export default {
           pre,
           groupOf3Digital
         ) {
-          return pre + groupOf3Digital.replace(/\d{3}/g, ",$&");
-        });
-    },
+          return pre + groupOf3Digital.replace(/\d{3}/g, ',$&')
+        })
+    }
   },
-  methods:{
-    sendDataToFather(){
-      this.$emit('callDataToFather', this.price);
+  methods: {
+    sendDataToFather () {
+      this.$emit('callDataToFather', this.price)
     }
   }
-};
+}
 </script>
-
 <style>
 </style>

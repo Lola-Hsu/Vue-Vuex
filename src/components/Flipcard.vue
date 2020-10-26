@@ -1,9 +1,9 @@
 <template>
-  <div class="card">
-    <div class="flip-style front">
+  <div class='card'>
+    <div class='flip-style front'>
       <h1>Hello</h1>
     </div>
-    <div class="flip-style back">
+    <div class='flip-style back'>
       <h1>Goodbye</h1>
     </div>
   </div>
@@ -11,10 +11,9 @@
 
 <script>
 export default {
-  name: "Flipcard",
-};
+  name: 'Flipcard'
+}
 </script>
-    
 <style>
 .card {
   margin: 20px;

@@ -1,9 +1,9 @@
 <template>
-  <div id="app">
+  <div id='app'>
     <Header />
-    <div class="list">
+    <div class='list'>
       <List />
-      <div class="list__content">
+      <div class='list__content'>
         <router-view></router-view>
       </div>
     </div>
@@ -11,49 +11,49 @@
 </template>
 
 <script>
-import Header from "./components/Header";
-import List from "./components/List";
+import Header from './components/Header'
+import List from './components/List'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     Header,
-    List,
+    List
   },
-  data() {
+  data () {
     return {
       list3: [
         [3, 4, 5],
         [6, 7, 8],
-        [9, 0],
+        [9, 0]
       ],
-      fromChildData: "",
-      childData: "",
-    };
+      fromChildData: '',
+      childData: ''
+    }
   },
   methods: {
-    showMsgFromChild(data) {
-      this.fromChildData = data;
+    showMsgFromChild (data) {
+      this.fromChildData = data
     },
-    showDataFromChild(data) {
-      this.childData = data;
+    showDataFromChild (data) {
+      this.childData = data
     },
-    //vue-router 上一頁
-    back() {
+    // vue-router 上一頁
+    back () {
       // this.$router.back()
-      this.$router.go(-1);
+      this.$router.go(-1)
     },
-    //vue-router 下一頁
-    forword() {
+    // vue-router 下一頁
+    forword () {
       // this.$router.forword()
-      this.$router.go(1);
+      this.$router.go(1)
     },
-    //vue-router 指定跳轉頁面
-    goPage() {
-      this.$router.push("/Ex222");
-    },
-  },
-};
+    // vue-router 指定跳轉頁面
+    goPage () {
+      this.$router.push('/Ex222')
+    }
+  }
+}
 </script>
 
 <style scoped>

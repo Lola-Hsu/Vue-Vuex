@@ -1,43 +1,41 @@
 <template>
-  <div class="computed">
+  <div class='computed'>
     <p>message : {{ message }}</p>
-    <p>now: (computed) : {{ now }}</p>
+    <!-- <p>now: (computed) : {{ now }}</p> -->
     <p>getNow (method): {{ getNow() }}</p>
-    <button @click="msg2">++</button>
+    <button @click='msg2'>++</button>
     <p>{{ msg }}</p>
-    <div class="computed__box"></div>
+    <div class='computed__box'></div>
   </div>
 </template>
-
-
 <script>
 export default {
-  name: "Computed",
-  data() {
+  name: 'Computed',
+  data () {
     return {
-      message: 125,
-    };
+      message: 125
+    }
   },
-  computed: {
-    now: function () {
-      if (this.message);
-      return Date.now();
-    },
-  },
+  // computed: {
+  //   now: function () {
+  //     if (this.message) {
+  //       return Date.now()
+  //     }
+  //   }
+  // },
   methods: {
     getNow: function () {
-      return Date.now();
+      return Date.now()
     },
-    msg2() {
-      this.message++;
-    },
+    msg2 () {
+      this.message++
+    }
   },
   props: {
-    msg: String,
-  },
-};
+    msg: String
+  }
+}
 </script>
-
 <style>
 .computed__box{
   width: 200px;

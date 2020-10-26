@@ -50,30 +50,29 @@
 
 <script>
 export default {
-  name: "HelloWorld",
-  data() {
+  name: 'HelloWorld',
+  data () {
     return {
-      hint: "這裡是標題",
+      hint: '這裡是標題',
       classList: {
         active: true,
-        hasError: true,
+        hasError: true
       },
       styleList: {
-        color: "yellow",
-        fontSize: "18px",
+        color: 'yellow',
+        fontSize: '18px'
       },
       toggle: false,
       group: [],
-      selected: "尚未選擇",
-      option: [],
-    };
+      selected: '尚未選擇',
+      option: []
+    }
   },
   props: {
-    msg: String,
-  },
-};
+    msg: String
+  }
+}
 </script>
-
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
